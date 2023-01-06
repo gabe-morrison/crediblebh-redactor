@@ -19,7 +19,7 @@ const redactAll = () => {
 
 const redact = (firstName,lastName) => {
   const list = document.querySelectorAll('a, td, .Answer');
-  const regex = new RegExp(`${firstName}|${lastName}`);
+  const regex = new RegExp(`${firstName}(?!h)|${lastName}`);
   list.forEach((el)=>{
     el.childNodes.forEach((node)=>{    
       if (node.nodeType === 3 && node.data.includes(firstName || lastName)) {
